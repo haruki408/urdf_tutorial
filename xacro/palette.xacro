@@ -108,13 +108,13 @@
     <xacro:limb name="limb_n_13" base_frame="palette_link_5" p="${0*pi/180}" y="${0*pi/180}" r="${0*pi/180}" />
     <xacro:limb name="limb_n_14" base_frame="palette_link_4" p="${0*pi/180}" y="${0*pi/180}" r="${0*pi/180}" />
     <!-- <xacro:limb name="limb_n_15" base_frame="palette_link_3" p="${0*pi/180}" y="${0*pi/180}" r="${0*pi/180}" /> -->
-    <!-- <xacro:wheel_d250 name="wheel_n_1" base_frame="palette_link_10" p="${0*pi/180}" y="${90*pi/180}" r="${90*pi/180}" /> -->
+    <xacro:wheel_d250 name="wheel_n_1" base_frame="palette_link_10" p="${0*pi/180}" y="${90*pi/180}" r="${90*pi/180}" />
     <xacro:palette_body name="body_n_2" base_frame="palette_link_12" p="${0*pi/180}" y="${90*pi/180}" r="${0*pi/180}" />
 
     <!-- <xacro:limb name="palette_body_n_2" base_frame="palette_body_n_2_link_2" p="0" y="${0*pi/180}" r="${0*pi/180}" /> -->
-    <xacro:if value="$(arg use_wheel)">
+    <!-- <xacro:if value="$(arg use_wheel)">
         <xacro:wheel_d250 name="wheel_n_1" base_frame="palette_link_10"
                         p="${0*pi/180}" y="${90*pi/180}" r="${90*pi/180}" />
-    </xacro:if>
+    </xacro:if> -->
 
 </robot>
