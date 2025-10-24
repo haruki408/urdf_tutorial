@@ -1,0 +1,222 @@
+<?xml version="1.0"?>
+<robot name="moonshot_robot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <!-- <xacro:include filename="$(find urdf_tutorial)/xacro/limb.xacro" />
+     <xacro:include filename="$(find urdf_tutorial)/xacro/wheel_d250_with_connector.xacro" />
+      <xacro:include filename="$(find urdf_tutorial)/xacro/wheel_d450_with_connector.xacro" />
+      <xacro:include filename="$(find urdf_tutorial)/xacro/multi_func_ee.xacro"/> -->
+
+
+    <material name="white">
+        <color rgba="1 1 1 1"/>
+    </material>
+
+    <material name="silver">
+        <color rgba="0.75 0.75 0.75 1"/>
+    </material>
+
+    <material name="black">
+        <color rgba="0.2 0.2 0.2 1"/>
+    </material>
+
+    <!-- Define some constants -->
+    <xacro:property name="polybody_n_1_length" value="0.5"/>
+    <xacro:property name="polybody_n_1_width" value="0.15"/>
+    <xacro:property name="polybody_n_1_height" value="0.15"/>
+    <xacro:property name="polybody_n_1_mass" value="5.0"/>
+    <!-- <xacro:property name="" value="3.14159265359"/> -->
+    <!-- Define the body link -->
+
+    <!-- <link name="livox_frame_"/> -->
+ 
+
+    <link name="polybody_n_1_base_link">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0  0"/>
+            <geometry>
+                <!-- <box size="${body_n_1_length} ${body_n_1_width} ${body_n_1_height}"/> -->
+                <mesh filename="package://urdf_tutorial/stl/PolyBody/polybody_fullassem_wo_connector_d435_remesh.stl" scale="0.0001 0.0001 0.0001"/>
+            </geometry>
+            <material name="black">
+                <color rgba="0 0 1 1"/>
+            </material>
+        </visual>
+        <collision>
+            <geometry>
+                <mesh filename="package://urdf_tutorial/stl/PolyBody/polybody_fullassem_wo_connector_d435_remesh.stl" scale="0.0001 0.0001 0.0001"/>
+            </geometry>
+        </collision>
+        <inertial>
+            <mass value="${polybody_n_1_mass}"/>
+            <origin xyz="0 0 0"/>
+            <inertia ixx="0.1" ixy="0.0" ixz="0.0" iyy="0.1" iyz="0.0" izz="0.1"/>
+        </inertial>
+    </link>
+
+    <link name="polybody_n_1_link_1"/>
+    <link name="polybody_n_1_link_2"/>
+    <link name="polybody_n_1_link_3"/>
+    <link name="polybody_n_1_link_4"/>
+
+    <link name="polybody_n_1_link_5"/>
+    <link name="polybody_n_1_link_6"/>
+    <link name="polybody_n_1_link_7"/>
+    <link name="polybody_n_1_link_8"/>
+    <link name="polybody_n_1_link_9"/>
+    <link name="polybody_n_1_link_10"/>
+    <link name="polybody_n_1_link_11"/>
+    <link name="polybody_n_1_link_12"/>
+
+    <link name="polybody_n_1_link_13"/>
+    <link name="polybody_n_1_link_14"/>
+    <link name="polybody_n_1_link_15"/>
+    <link name="polybody_n_1_link_16"/>
+
+    <link name="polybody_n_1_lidar_top"/>
+    <link name="polybody_n_1_lidar_buttom"/>
+
+    <!-- <joint name="livox_joint_" type="fixed">
+        <parent link="livox_frame_"/>
+        <child link="polybody_n_1_base_link"/>
+        <origin xyz="0 0.125 -0.217" rpy="-0.000 -1.047 -1.571"/>
+    </joint> -->
+
+    <joint name="polybody_n_1_joint_1" type="fixed">
+        <parent link="polybody_n_1_base_link"/>
+        <child link="polybody_n_1_link_1"/>
+        <origin xyz="${0.2253375*3/4} 0 ${0.2253375*3/4}" rpy="0 ${-pi/4} 0"/>
+    </joint>
+
+    <joint name="polybody_n_1_joint_2" type="fixed">
+        <parent link="polybody_n_1_base_link"/>
+        <child link="polybody_n_1_link_2"/>
+        <origin xyz="0 ${0.2253375*3/4} ${0.2253375*3/4}" rpy="0 ${-pi/4} ${pi/2}"/>
+    </joint>
+
+    <joint name="polybody_n_1_joint_3" type="fixed">
+        <parent link="polybody_n_1_base_link"/>
+        <child link="polybody_n_1_link_3"/>
+        <origin xyz="${-0.2253375*3/4} 0 ${0.2253375*3/4}" rpy="0 ${-pi/4} ${-pi}"/>
+    </joint>
+
+    <joint name="polybody_n_1_joint_4" type="fixed">
+        <parent link="polybody_n_1_base_link"/>
+        <child link="polybody_n_1_link_4"/>
+        <origin xyz="0 ${-0.2253375*3/4} ${0.2253375*3/4}" rpy="0 ${-pi/4} ${-pi/2}"/>
+    </joint>
+
+    <joint name="polybody_n_1_joint_5" type="fixed">
+        <parent link="polybody_n_1_base_link"/>
+        <child link="polybody_n_1_link_5"/>
+        <origin xyz="${0.2253375} 0 0" rpy="0 0 0"/>
+    </joint>
+    <joint name="polybody_n_1_joint_6" type="fixed">
+        <parent link="polybody_n_1_base_link"/>
+        <child link="polybody_n_1_link_6"/>
+        <origin xyz="${0.2253375*3/4} ${0.2253375*3/4} 0" rpy="0 0  ${pi/4}"/>
+    </joint>
+    <joint name="polybody_n_1_joint_7" type="fixed">
+        <parent link="polybody_n_1_base_link"/>
+        <child link="polybody_n_1_link_7"/>
+        <origin xyz="0 ${0.2253375} 0" rpy="0 0 ${pi/2}"/>
+    </joint>
+    <joint name="polybody_n_1_joint_8" type="fixed">
+        <parent link="polybody_n_1_base_link"/>
+        <child link="polybody_n_1_link_8"/>
+        <origin xyz="${-0.2253375*3/4} ${0.2253375*3/4} 0" rpy="0 0 ${pi*3/4}"/>
+    </joint>
+    <joint name="polybody_n_1_joint_9" type="fixed">
+        <parent link="polybody_n_1_base_link"/>
+        <child link="polybody_n_1_link_9"/>
+        <origin xyz="${-0.2253375} 0 0" rpy="0 0 ${pi}"/>
+    </joint>
+    <joint name="polybody_n_1_joint_10" type="fixed">
+        <parent link="polybody_n_1_base_link"/>
+        <child link="polybody_n_1_link_10"/>
+        <origin xyz="${-0.2253375*3/4} ${-0.2253375*3/4} 0" rpy="0 0 ${-pi*3/4}"/>
+    </joint>
+    <joint name="polybody_n_1_joint_11" type="fixed">
+        <parent link="polybody_n_1_base_link"/>
+        <child link="polybody_n_1_link_11"/>
+        <origin xyz="0 ${-0.2253375} 0" rpy="0 0 ${-pi/2}"/>
+    </joint>
+    <joint name="polybody_n_1_joint_12" type="fixed">
+        <parent link="polybody_n_1_base_link"/>
+        <child link="polybody_n_1_link_12"/>
+        <origin xyz="${0.2253375*3/4} ${-0.2253375*3/4} 0" rpy="0 0 ${-pi/4}"/>
+    </joint>
+
+
+
+    <joint name="polybody_n_1_joint_13" type="fixed">
+        <parent link="polybody_n_1_base_link"/>
+        <child link="polybody_n_1_link_13"/>
+        <origin xyz="${0.2253375*3/4} 0 ${-0.2253375*3/4}" rpy="0 ${pi/4} 0"/>
+    </joint>
+
+    <joint name="polybody_n_1_joint_14" type="fixed">
+        <parent link="polybody_n_1_base_link"/>
+        <child link="polybody_n_1_link_14"/>
+        <origin xyz="0 ${0.2253375*3/4} ${-0.2253375*3/4}" rpy="0 ${pi/4} ${pi/2}"/>
+    </joint>
+
+    <joint name="polybody_n_1_joint_15" type="fixed">
+        <parent link="polybody_n_1_base_link"/>
+        <child link="polybody_n_1_link_15"/>
+        <origin xyz="${-0.2253375*3/4} 0 ${-0.2253375*3/4}" rpy="0 ${pi/4} ${-pi}"/>
+    </joint>
+
+    <joint name="polybody_n_1_joint_16" type="fixed">
+        <parent link="polybody_n_1_base_link"/>
+        <child link="polybody_n_1_link_16"/>
+        <origin xyz="0 ${-0.2253375*3/4} ${-0.2253375*3/4}" rpy="0 ${pi/4} ${-pi/2}"/>
+    </joint>
+
+
+
+    <joint name="polybody_n_1_joint_lidar_top" type="fixed">
+        <parent link="polybody_n_1_base_link"/>
+        <child link="polybody_n_1_lidar_top"/>
+        <origin xyz="0 0 ${0.2253375}" rpy="0 0 ${-pi/2}"/>
+    </joint>
+
+    <joint name="polybody_n_1_joint_lidar_buttom" type="fixed">
+        <parent link="polybody_n_1_base_link"/>
+        <child link="polybody_n_1_lidar_buttom"/>
+        <origin xyz="0 0 ${-0.2253375}" rpy="${pi} 0 0"/>
+    </joint>
+
+
+
+    <!-- <xacro:limb name="limb_n_1" base_frame="polybody_n_1_base_link_1" p="${90*pi/180}" y="${0*pi/180}" r="${0*pi/180}" /> -->
+    <!-- <xacro:limb name="limb_n_2" base_frame="polybody_n_1_base_link_6" p="${90*pi/180}" y="${0*pi/180}" r="${0*pi/180}" /> -->
+    <!-- <xacro:limb name="limb_n_3" base_frame="polybody_n_1_base_link_5" p="${90*pi/180}" y="${0*pi/180}" r="${0*pi/180}" /> -->
+    <!-- <xacro:limb name="limb_n_4" base_frame="polybody_n_1_base_link_4" p="${90*pi/180}" y="${0*pi/180}" r="${0*pi/180}" /> -->
+    <!-- <xacro:limb name="limb_n_5" base_frame="polybody_n_1_base_link_3" p="${90*pi/180}" y="${0*pi/180}" r="${0*pi/180}" /> -->
+    <!-- <xacro:limb name="limb_n_6" base_frame="polybody_n_1_base_link_2" p="${90*pi/180}" y="${0*pi/180}" r="${0*pi/180}" /> -->
+    <!-- <xacro:limb name="limb_n_7" base_frame="polybody_n_1_base_link_7" p="${90*pi/180}" y="${0*pi/180}" r="${0*pi/180}" /> -->
+    <!-- <xacro:limb name="limb_n_8" base_frame="polybody_n_1_base_link_8" p="${90*pi/180}" y="${0*pi/180}" r="${0*pi/180}" /> -->
+    
+
+    <!-- <xacro:multi_func_ee prefix="multi_func_ee_n_1" base_frame="limb_n_1_limb_end_effector" p="${90*pi/180}" y="${0*pi/180}" r="${0*pi/180}" /> -->
+
+    <!-- <xacro:wheel_d450 name="wheel_d450_n_1" base_frame="limb_n_2_limb_end_effector" p="0" y="${0*pi/180}" r="${0*pi/180}" /> -->
+    <!-- <xacro:wheel_d450 name="wheel_d450_n_2" base_frame="limb_n_3_limb_end_effector" p="0" y="${0*pi/180}" r="${0*pi/180}" /> -->
+    <!-- <xacro:wheel_d450 name="wheel_d450_n_3" base_frame="limb_n_5_limb_end_effector" p="0" y="${0*pi/180}" r="${0*pi/180}" /> -->
+    <!-- <xacro:wheel_d450 name="wheel_d450_n_4" base_frame="limb_n_6_limb_end_effector" p="0" y="${0*pi/180}" r="${0*pi/180}" /> -->
+    <!-- <xacro:wheel_d450 name="wheel_d450_n_5" base_frame="limb_n_5_limb_end_effector" p="0" y="${0*pi/180}" r="${0*pi/180}" />
+    <xacro:wheel_d450 name="wheel_d450_n_6" base_frame="limb_n_6_limb_end_effector" p="0" y="${0*pi/180}" r="${0*pi/180}" />
+    <xacro:wheel_d450 name="wheel_d450_n_7" base_frame="limb_n_7_limb_end_effector" p="0" y="${0*pi/180}" r="${0*pi/180}" />
+    <xacro:wheel_d450 name="wheel_d450_n_8" base_frame="limb_n_8_limb_end_effector" p="0" y="${0*pi/180}" r="${0*pi/180}" /> -->
+    
+    <!-- <xacro:wheel_d250 name="wheel_d250_n_1" base_frame="limb_n_1_limb_end_effector" p="0" y="${0*pi/180}" r="${0*pi/180}" />
+    <xacro:wheel_d250 name="wheel_d250_n_2" base_frame="limb_n_2_limb_end_effector" p="0" y="${0*pi/180}" r="${0*pi/180}" />
+    <xacro:wheel_d250 name="wheel_d250_n_3" base_frame="limb_n_3_limb_end_effector" p="0" y="${0*pi/180}" r="${0*pi/180}" />
+    <xacro:wheel_d250 name="wheel_d250_n_4" base_frame="limb_n_4_limb_end_effector" p="0" y="${0*pi/180}" r="${0*pi/180}" />
+    <xacro:wheel_d250 name="wheel_d250_n_5" base_frame="limb_n_5_limb_end_effector" p="0" y="${0*pi/180}" r="${0*pi/180}" />
+    <xacro:wheel_d250 name="wheel_d250_n_6" base_frame="limb_n_6_limb_end_effector" p="0" y="${0*pi/180}" r="${0*pi/180}" />
+    <xacro:wheel_d250 name="wheel_d250_n_7" base_frame="limb_n_7_limb_end_effector" p="0" y="${0*pi/180}" r="${0*pi/180}" />
+    <xacro:wheel_d250 name="wheel_d250_n_8" base_frame="limb_n_8_limb_end_effector" p="0" y="${0*pi/180}" r="${0*pi/180}" />
+     -->
+
+</robot>

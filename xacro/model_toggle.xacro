@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="toggle_robot">
+
+  <!-- 切替引数：true = 大きく赤 / false = 小さく青 -->
+  <xacro:arg name="use_alt" default="false"/>
+
+  <!-- 基準フレーム -->
+  <link name="world"/>
+
+  <!-- 実体のベース -->
+  <link name="base_link">
+    <visual>
+      <geometry>
+        <box size="$(eval '0.6 0.6 0.2' if use_alt else '0.3 0.3 0.1')"/>
+      </geometry>
+      <material name="$(eval 'alt_red' if use_alt else 'base_blue')">
+        <color rgba="$(eval '1 0 0 1' if use_alt else '0 0.3 1 1')"/>
+      </material>
+    </visual>
+  </link>
+
+  <!-- 固定ジョイント：world -> base_link -->
+  <joint name="world_to_base" type="fixed">
+    <parent link="world"/>
+    <child  link="base_link"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+
+</robot>

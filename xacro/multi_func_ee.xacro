@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="multi_func_ee">
+
+    <xacro:macro name="multi_func_ee" params="prefix base_frame r p y">
+        <!-- Base link -->
+        <link name="${prefix}_base_link"/>
+
+
+        <!-- Joint -->
+        <joint name="${prefix}_joint" type="fixed">
+            <parent link="${base_frame}"/>
+            <child link="${prefix}_base_link"/>
+            <origin xyz="0 0 0" rpy="${r} ${p} ${y}"/>
+        </joint>
+
+        <!-- End effector link -->
+        <link name="${prefix}_ee_link">
+            <visual>
+                <origin xyz="0.04 0 0" rpy="0 0 0"/>
+                <geometry>
+                <mesh filename="package://urdf_tutorial/stl/EE_compress.stl" scale="0.0001 0.0001 0.0001"/>
+                </geometry>
+                <material name="blue">
+                    <color rgba="0 0 1 1"/>
+                </material>
+            </visual>
+        </link>
+
+        <!-- Joint between base and end effector -->
+        <joint name="${prefix}_ee_joint" type="fixed">
+            <parent link="${prefix}_base_link"/>
+            <child link="${prefix}_ee_link"/>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+        </joint>
+    </xacro:macro>
+
+</robot>

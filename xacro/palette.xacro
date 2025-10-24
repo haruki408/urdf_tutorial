@@ -1,0 +1,120 @@
+<?xml version="1.0"?>
+<robot name="palette" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+   <xacro:include filename="$(find urdf_tutorial)/xacro/limb.xacro" />
+   <xacro:include filename="$(find urdf_tutorial)/xacro/wheel_d250_with_connector.xacro" />
+   <xacro:include filename="$(find urdf_tutorial)/xacro/palette_body.xacro" />
+
+   <!-- 追加: ホイール有無の引数（デフォルト: あり） -->
+   <xacro:arg name="use_wheel" default="true"/>
+  
+   <link name="palette_link">
+
+    </link> 
+
+   <link name="palette_link_1"/>
+    <link name="palette_link_2"/>
+    <link name="palette_link_3"/>
+    <link name="palette_link_4"/>
+    <link name="palette_link_5"/>
+    <link name="palette_link_6"/>
+    <link name="palette_link_7"/>
+    <link name="palette_link_8"/>
+    <link name="palette_link_9"/>
+    <link name="palette_link_10"/>
+    <link name="palette_link_11"/>
+    <link name="palette_link_12"/>
+    <link name="palette_link_13"/>
+
+    <joint name="palette_joint_1" type="fixed">
+        <parent link="palette_link"/>
+        <child link="palette_link_1"/>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+    </joint>
+
+    <joint name="palette_joint_2" type="fixed">
+        <parent link="palette_link"/>
+        <child link="palette_link_2"/>
+        <origin xyz="0.28 0 0" rpy="0 0 0"/>
+    </joint>
+
+    <joint name="palette_joint_3" type="fixed">
+        <parent link="palette_link"/>
+        <child link="palette_link_3"/>
+        <origin xyz="0.56 0 0" rpy="0 0 0"/>
+    </joint>
+
+    <joint name="palette_joint_4" type="fixed">
+        <parent link="palette_link"/>
+        <child link="palette_link_4"/>
+        <origin xyz="0 -0.28 0" rpy="0 0 0"/>
+    </joint>
+
+    <joint name="palette_joint_5" type="fixed">
+        <parent link="palette_link"/>
+        <child link="palette_link_5"/>
+        <origin xyz="0.28 -0.28 0" rpy="0 0 0"/>
+    </joint>
+
+    <joint name="palette_joint_6" type="fixed">
+        <parent link="palette_link"/>
+        <child link="palette_link_6"/>
+        <origin xyz="0.56 -0.28 0" rpy="0 0 0"/>
+    </joint>
+
+    <joint name="palette_joint_7" type="fixed">
+        <parent link="palette_link"/>
+        <child link="palette_link_7"/>
+        <origin xyz="0.84 -0.28 0" rpy="0 0 0"/>
+    </joint>
+
+    <joint name="palette_joint_8" type="fixed">
+        <parent link="palette_link"/>
+        <child link="palette_link_8"/>
+        <origin xyz="1.12 -0.28 0" rpy="0 0  0"/>
+    </joint>
+
+    <joint name="palette_joint_9" type="fixed">
+        <parent link="palette_link"/>
+        <child link="palette_link_9"/>
+        <origin xyz="0 -1.08 0" rpy="0  0 0"/>
+    </joint>
+
+    <joint name="palette_joint_10" type="fixed">
+        <parent link="palette_link"/>
+        <child link="palette_link_10"/>
+        <origin xyz="1.26 -1.185 0" rpy="0  0 0"/>
+    </joint>
+
+    <joint name="palette_joint_11" type="fixed">
+        <parent link="palette_link"/>
+        <child link="palette_link_11"/>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+    </joint>
+
+    <joint name="palette_joint_12" type="fixed">
+        <parent link="palette_link"/>
+        <child link="palette_link_12"/>
+        <origin xyz="0.75 -1.47 0" rpy="0 0 0"/>
+    </joint>
+
+    <joint name="palette_joint_13" type="fixed">
+        <parent link="palette_link"/>
+        <child link="palette_link_13"/>
+        <origin xyz="1.12 -1.36 0" rpy="0 0 0"/>
+    </joint>
+
+    <xacro:limb name="limb_n_12" base_frame="palette_link_7" p="${0*pi/180}" y="${0*pi/180}" r="${0*pi/180}" />
+    <xacro:limb name="limb_n_13" base_frame="palette_link_5" p="${0*pi/180}" y="${0*pi/180}" r="${0*pi/180}" />
+    <xacro:limb name="limb_n_14" base_frame="palette_link_4" p="${0*pi/180}" y="${0*pi/180}" r="${0*pi/180}" />
+    <!-- <xacro:limb name="limb_n_15" base_frame="palette_link_3" p="${0*pi/180}" y="${0*pi/180}" r="${0*pi/180}" /> -->
+    <!-- <xacro:wheel_d250 name="wheel_n_1" base_frame="palette_link_10" p="${0*pi/180}" y="${90*pi/180}" r="${90*pi/180}" /> -->
+    <xacro:palette_body name="body_n_2" base_frame="palette_link_12" p="${0*pi/180}" y="${90*pi/180}" r="${0*pi/180}" />
+
+    <!-- <xacro:limb name="palette_body_n_2" base_frame="palette_body_n_2_link_2" p="0" y="${0*pi/180}" r="${0*pi/180}" /> -->
+    <xacro:if value="$(arg use_wheel)">
+        <xacro:wheel_d250 name="wheel_n_1" base_frame="palette_link_10"
+                        p="${0*pi/180}" y="${90*pi/180}" r="${90*pi/180}" />
+    </xacro:if>
+
+</robot>

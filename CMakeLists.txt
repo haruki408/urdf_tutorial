@@ -4,8 +4,12 @@ project(urdf_tutorial)
 find_package(ament_cmake REQUIRED)
 
 install(
-  DIRECTORY images launch meshes rviz urdf
+  DIRECTORY images launch meshes rviz urdf xacro stl src
   DESTINATION share/${PROJECT_NAME}
+)
+
+install(PROGRAMS src/model_switcher.py
+  DESTINATION lib/${PROJECT_NAME}
 )
 
 if(BUILD_TESTING)

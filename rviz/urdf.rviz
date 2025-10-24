@@ -1,35 +1,486 @@
 Panels:
   - Class: rviz_common/Displays
+    Help Height: 70
     Name: Displays
+    Property Tree Widget:
+      Expanded:
+        - /Global Options1
+        - /Status1
+        - /RobotModel1
+        - /RobotModel1/Status1
+      Splitter Ratio: 0.5
+    Tree Height: 296
   - Class: rviz_common/Views
+    Expanded:
+      - /Current View1
     Name: Views
+    Splitter Ratio: 0.5
 Visualization Manager:
+  Class: ""
   Displays:
-    - Class: rviz_default_plugins/Grid
+    - Alpha: 0.5
+      Cell Size: 1
+      Class: rviz_default_plugins/Grid
+      Color: 160; 160; 164
+      Enabled: true
+      Line Style:
+        Line Width: 0.029999999329447746
+        Value: Lines
       Name: Grid
+      Normal Cell Count: 0
+      Offset:
+        X: 0
+        Y: 0
+        Z: 0
+      Plane: XY
+      Plane Cell Count: 10
+      Reference Frame: <Fixed Frame>
       Value: true
-    - Alpha: 0.8
+    - Alpha: 0.800000011920929
       Class: rviz_default_plugins/RobotModel
+      Collision Enabled: false
+      Description File: ""
+      Description Source: Topic
       Description Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        History Policy: Keep Last
+        Reliability Policy: Reliable
         Value: /robot_description
+      Enabled: true
+      Links:
+        All Links Enabled: true
+        Expand Joint Details: false
+        Expand Link Details: false
+        Expand Tree: false
+        Link Tree Style: Links in Alphabetic Order
+        body_n_2_limb_n_2_base_limb_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        body_n_2_limb_n_2_limb_end_effector:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        body_n_2_limb_n_2_limb_link1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        body_n_2_limb_n_2_limb_link2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        body_n_2_limb_n_2_limb_link3:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        gripper_n_4_base_wheel_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        gripper_n_4_wheel_link1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        limb_n_12_base_limb_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        limb_n_12_limb_end_effector:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        limb_n_12_limb_link1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        limb_n_12_limb_link2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        limb_n_12_limb_link3:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        limb_n_13_base_limb_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        limb_n_13_limb_end_effector:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        limb_n_13_limb_link1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        limb_n_13_limb_link2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        limb_n_13_limb_link3:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        limb_n_14_base_limb_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        limb_n_14_limb_end_effector:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        limb_n_14_limb_link1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        limb_n_14_limb_link2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        limb_n_14_limb_link3:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        limb_n_15_base_limb_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        limb_n_15_limb_end_effector:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        limb_n_15_limb_link1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        limb_n_15_limb_link2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        limb_n_15_limb_link3:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        palette_body_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        palette_body_n_2_link_2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        palette_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        palette_link_1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        palette_link_10:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        palette_link_11:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        palette_link_12:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        palette_link_13:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        palette_link_2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        palette_link_3:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        palette_link_4:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        palette_link_5:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        palette_link_6:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        palette_link_7:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        palette_link_8:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        palette_link_9:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+      Mass Properties:
+        Inertia: false
+        Mass: false
       Name: RobotModel
+      TF Prefix: ""
+      Update Interval: 0
       Value: true
+      Visual Enabled: true
     - Class: rviz_default_plugins/TF
+      Enabled: true
+      Frame Timeout: 15
+      Frames:
+        All Enabled: true
+        body_n_2_limb_n_2_base_limb_link:
+          Value: true
+        body_n_2_limb_n_2_limb_end_effector:
+          Value: true
+        body_n_2_limb_n_2_limb_link1:
+          Value: true
+        body_n_2_limb_n_2_limb_link2:
+          Value: true
+        body_n_2_limb_n_2_limb_link3:
+          Value: true
+        gripper_n_4_base_wheel_link:
+          Value: true
+        gripper_n_4_wheel_link1:
+          Value: true
+        limb_n_12_base_limb_link:
+          Value: true
+        limb_n_12_limb_end_effector:
+          Value: true
+        limb_n_12_limb_link1:
+          Value: true
+        limb_n_12_limb_link2:
+          Value: true
+        limb_n_12_limb_link3:
+          Value: true
+        limb_n_13_base_limb_link:
+          Value: true
+        limb_n_13_limb_end_effector:
+          Value: true
+        limb_n_13_limb_link1:
+          Value: true
+        limb_n_13_limb_link2:
+          Value: true
+        limb_n_13_limb_link3:
+          Value: true
+        limb_n_14_base_limb_link:
+          Value: true
+        limb_n_14_limb_end_effector:
+          Value: true
+        limb_n_14_limb_link1:
+          Value: true
+        limb_n_14_limb_link2:
+          Value: true
+        limb_n_14_limb_link3:
+          Value: true
+        limb_n_15_base_limb_link:
+          Value: true
+        limb_n_15_limb_end_effector:
+          Value: true
+        limb_n_15_limb_link1:
+          Value: true
+        limb_n_15_limb_link2:
+          Value: true
+        limb_n_15_limb_link3:
+          Value: true
+        palette_body_link:
+          Value: true
+        palette_body_n_2_link_2:
+          Value: true
+        palette_link:
+          Value: true
+        palette_link_1:
+          Value: true
+        palette_link_10:
+          Value: true
+        palette_link_11:
+          Value: true
+        palette_link_12:
+          Value: true
+        palette_link_13:
+          Value: true
+        palette_link_2:
+          Value: true
+        palette_link_3:
+          Value: true
+        palette_link_4:
+          Value: true
+        palette_link_5:
+          Value: true
+        palette_link_6:
+          Value: true
+        palette_link_7:
+          Value: true
+        palette_link_8:
+          Value: true
+        palette_link_9:
+          Value: true
+      Marker Scale: 1
       Name: TF
+      Show Arrows: true
+      Show Axes: true
+      Show Names: false
+      Tree:
+        palette_link:
+          palette_link_1:
+            {}
+          palette_link_10:
+            gripper_n_4_base_wheel_link:
+              gripper_n_4_wheel_link1:
+                {}
+          palette_link_11:
+            {}
+          palette_link_12:
+            palette_body_link:
+              palette_body_n_2_link_2:
+                body_n_2_limb_n_2_base_limb_link:
+                  body_n_2_limb_n_2_limb_link1:
+                    body_n_2_limb_n_2_limb_link2:
+                      body_n_2_limb_n_2_limb_link3:
+                        body_n_2_limb_n_2_limb_end_effector:
+                          {}
+          palette_link_13:
+            {}
+          palette_link_2:
+            {}
+          palette_link_3:
+            limb_n_15_base_limb_link:
+              limb_n_15_limb_link1:
+                limb_n_15_limb_link2:
+                  limb_n_15_limb_link3:
+                    limb_n_15_limb_end_effector:
+                      {}
+          palette_link_4:
+            limb_n_14_base_limb_link:
+              limb_n_14_limb_link1:
+                limb_n_14_limb_link2:
+                  limb_n_14_limb_link3:
+                    limb_n_14_limb_end_effector:
+                      {}
+          palette_link_5:
+            limb_n_13_base_limb_link:
+              limb_n_13_limb_link1:
+                limb_n_13_limb_link2:
+                  limb_n_13_limb_link3:
+                    limb_n_13_limb_end_effector:
+                      {}
+          palette_link_6:
+            {}
+          palette_link_7:
+            limb_n_12_base_limb_link:
+              limb_n_12_limb_link1:
+                limb_n_12_limb_link2:
+                  limb_n_12_limb_link3:
+                    limb_n_12_limb_end_effector:
+                      {}
+          palette_link_8:
+            {}
+          palette_link_9:
+            {}
+      Update Interval: 0
       Value: true
+  Enabled: true
   Global Options:
-    Fixed Frame: base_link
+    Background Color: 48; 48; 48
+    Fixed Frame: palette_link
+    Frame Rate: 30
+  Name: root
   Tools:
     - Class: rviz_default_plugins/MoveCamera
+  Transformation:
+    Current:
+      Class: rviz_default_plugins/TF
   Value: true
   Views:
     Current:
       Class: rviz_default_plugins/Orbit
-      Distance: 1.7
+      Distance: 3.4798741340637207
+      Enable Stereo Rendering:
+        Stereo Eye Separation: 0.05999999865889549
+        Stereo Focal Distance: 1
+        Swap Stereo Eyes: false
+        Value: false
+      Focal Point:
+        X: 0
+        Y: 0
+        Z: 0
+      Focal Shape Fixed Size: true
+      Focal Shape Size: 0.05000000074505806
+      Invert Z Axis: false
       Name: Current View
-      Pitch: 0.33
+      Near Clip Distance: 0.009999999776482582
+      Pitch: 0.3850001096725464
+      Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 5.5
+      Yaw: 5.6649980545043945
+    Saved:
+      - Class: rviz_default_plugins/Orbit
+        Distance: 3.4798741340637207
+        Enable Stereo Rendering:
+          Stereo Eye Separation: 0.05999999865889549
+          Stereo Focal Distance: 1
+          Swap Stereo Eyes: false
+          Value: false
+        Focal Point:
+          X: 0
+          Y: 0
+          Z: 0
+        Focal Shape Fixed Size: true
+        Focal Shape Size: 0.05000000074505806
+        Invert Z Axis: false
+        Name: Orbit
+        Near Clip Distance: 0.009999999776482582
+        Pitch: 0.3850001096725464
+        Target Frame: <Fixed Frame>
+        Value: Orbit (rviz)
+        Yaw: 5.6649980545043945
 Window Geometry:
+  Displays:
+    collapsed: false
   Height: 800
+  Hide Left Dock: false
+  Hide Right Dock: false
+  QMainWindow State: 000000ff00000000fd0000000100000000000001cb000002c6fc0200000002fb000000100044006900730070006c006100790073010000003d000001ab000000c900fffffffb0000000a0056006900650077007301000001ee00000115000000a400ffffff000002df000002c600000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+  Views:
+    collapsed: false
   Width: 1200
+  X: 37
+  Y: 64

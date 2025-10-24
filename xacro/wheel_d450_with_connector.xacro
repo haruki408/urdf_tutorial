@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="wheel_d450_robot">
+
+    <!-- Define a macro for the wheel -->
+    <xacro:macro name="wheel_d450" params="name base_frame r p y" >
+        <!-- Base link -->
+         
+
+        <joint name="${name}_joint" type="fixed">
+            <parent link="${base_frame}"/>
+            <child link="${name}_base_wheel_link"/>
+            <origin xyz="0 0 0" rpy="${r} ${p} ${y}"/>
+        </joint>
+
+        <link name="${name}_base_wheel_link">
+        </link>
+
+        <joint name="${name}_joint_1" type="fixed">
+            <parent link="${name}_base_wheel_link"/>
+            <child link="${name}_wheel_link1"/>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <axis xyz="0 0 -1"/>
+            <limit effort="10" lower="${2*pi}" upper="${2*pi}" velocity="1.0"/>
+        </joint>
+
+
+
+        <!-- Link 1 -->
+        <link name="${name}_wheel_link1">
+            <visual>
+                <!-- <origin xyz="0 0 ${0.0875/2}" rpy="0 0 0"/> -->
+                <origin xyz="0 0 0" rpy="${pi} 0 0"/>
+                <geometry>
+                <mesh filename="package://urdf_tutorial/stl/wheel_d450_with_connector.stl" scale="0.001 0.001 0.001"/>   
+                    <!-- <cylinder length="0.0875" radius="0.05"/> -->
+                </geometry>
+                <material name="black"/>
+            </visual>
+        </link>
+    </xacro:macro>
+</robot>

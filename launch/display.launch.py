@@ -8,8 +8,8 @@ def generate_launch_description():
     ld = LaunchDescription()
 
     urdf_tutorial_path = FindPackageShare('urdf_tutorial')
-    default_model_path = PathJoinSubstitution(['urdf', '01-myfirst.urdf'])
-    default_rviz_config_path = PathJoinSubstitution([urdf_tutorial_path, 'rviz', 'urdf.rviz'])
+    default_model_path = PathJoinSubstitution(['xacro', 'palette.xacro'])
+    default_rviz_config_path = PathJoinSubstitution([urdf_tutorial_path, 'rviz', 'defult.rviz'])
 
     # These parameters are maintained for backwards compatibility
     gui_arg = DeclareLaunchArgument(name='gui', default_value='true', choices=['true', 'false'],
