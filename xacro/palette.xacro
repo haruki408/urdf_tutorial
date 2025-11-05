@@ -6,7 +6,8 @@
    <xacro:include filename="$(find urdf_tutorial)/xacro/palette_body.xacro" />
 
    <!-- 追加: ホイール有無の引数（デフォルト: あり） -->
-   <xacro:arg name="use_wheel" default="true"/>
+   <!-- <xacro:arg name="use_wheel" default="true"/> -->
+   <xacro:arg name="attach_wheel" default="true"/>
   
    <link name="palette_link">
 
@@ -108,8 +109,24 @@
     <xacro:limb name="limb_n_13" base_frame="palette_link_5" p="${0*pi/180}" y="${0*pi/180}" r="${0*pi/180}" />
     <xacro:limb name="limb_n_14" base_frame="palette_link_4" p="${0*pi/180}" y="${0*pi/180}" r="${0*pi/180}" />
     <!-- <xacro:limb name="limb_n_15" base_frame="palette_link_3" p="${0*pi/180}" y="${0*pi/180}" r="${0*pi/180}" /> -->
-    <xacro:wheel_d250 name="wheel_n_1" base_frame="palette_link_10" p="${0*pi/180}" y="${90*pi/180}" r="${90*pi/180}" />
+    <!-- <xacro:wheel_d250 name="wheel_n_1" base_frame="palette_link_10" p="${0*pi/180}" y="${90*pi/180}" r="${90*pi/180}" /> -->
     <xacro:palette_body name="body_n_2" base_frame="palette_link_12" p="${0*pi/180}" y="${90*pi/180}" r="${0*pi/180}" />
+    <!-- すでに定義済み: <xacro:arg name="attach_wheel" default="true"/> -->
+
+    <xacro:if value="$(arg attach_wheel)">
+        <xacro:wheel_d250 name="wheel_n_1"
+                            base_frame="body_n_2_limb_n_2_limb_end_effector"
+                            x="0.034" y_pos="-0.09" z="0.03"
+                            r="${90*pi/180}" p="${0*pi/180}" y="${90*pi/180}"/>
+    </xacro:if>
+
+    <xacro:unless value="$(arg attach_wheel)">
+        <xacro:wheel_d250 name="wheel_n_1"
+                            base_frame="palette_link_10"
+                            x="0.0" y_pos="0.0" z="0.0"
+                            r="${90*pi/180}" p="${0*pi/180}" y="${90*pi/180}"/>
+    </xacro:unless>
+
 
     <!-- <xacro:limb name="palette_body_n_2" base_frame="palette_body_n_2_link_2" p="0" y="${0*pi/180}" r="${0*pi/180}" /> -->
     <!-- <xacro:if value="$(arg use_wheel)">
