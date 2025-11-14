@@ -7,7 +7,6 @@ Panels:
         - /Global Options1
         - /Status1
         - /RobotModel1
-        - /RobotModel1/Status1
       Splitter Ratio: 0.5
     Tree Height: 296
   - Class: rviz_common/Views
@@ -36,7 +35,7 @@ Visualization Manager:
       Plane Cell Count: 10
       Reference Frame: <Fixed Frame>
       Value: true
-    - Alpha: 0.800000011920929
+    - Alpha: 1
       Class: rviz_default_plugins/RobotModel
       Collision Enabled: false
       Description File: ""
@@ -79,16 +78,6 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
-        gripper_n_4_base_wheel_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        gripper_n_4_wheel_link1:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
         limb_n_12_base_limb_link:
           Alpha: 1
           Show Axes: false
@@ -164,31 +153,6 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
-        limb_n_15_base_limb_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        limb_n_15_limb_end_effector:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        limb_n_15_limb_link1:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        limb_n_15_limb_link2:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        limb_n_15_limb_link3:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
         palette_body_link:
           Alpha: 1
           Show Axes: false
@@ -254,6 +218,11 @@ Visualization Manager:
           Alpha: 1
           Show Axes: false
           Show Trail: false
+        wheel_n_1_base_wheel_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
       Mass Properties:
         Inertia: false
         Mass: false
@@ -277,10 +246,6 @@ Visualization Manager:
           Value: true
         body_n_2_limb_n_2_limb_link3:
           Value: true
-        gripper_n_4_base_wheel_link:
-          Value: true
-        gripper_n_4_wheel_link1:
-          Value: true
         limb_n_12_base_limb_link:
           Value: true
         limb_n_12_limb_end_effector:
@@ -310,16 +275,6 @@ Visualization Manager:
         limb_n_14_limb_link2:
           Value: true
         limb_n_14_limb_link3:
-          Value: true
-        limb_n_15_base_limb_link:
-          Value: true
-        limb_n_15_limb_end_effector:
-          Value: true
-        limb_n_15_limb_link1:
-          Value: true
-        limb_n_15_limb_link2:
-          Value: true
-        limb_n_15_limb_link3:
           Value: true
         palette_body_link:
           Value: true
@@ -353,6 +308,8 @@ Visualization Manager:
           Value: true
         palette_link_9:
           Value: true
+        wheel_n_1_base_wheel_link:
+          Value: true
       Marker Scale: 1
       Name: TF
       Show Arrows: true
@@ -363,9 +320,7 @@ Visualization Manager:
           palette_link_1:
             {}
           palette_link_10:
-            gripper_n_4_base_wheel_link:
-              gripper_n_4_wheel_link1:
-                {}
+            {}
           palette_link_11:
             {}
           palette_link_12:
@@ -376,18 +331,14 @@ Visualization Manager:
                     body_n_2_limb_n_2_limb_link2:
                       body_n_2_limb_n_2_limb_link3:
                         body_n_2_limb_n_2_limb_end_effector:
-                          {}
+                          wheel_n_1_base_wheel_link:
+                            {}
           palette_link_13:
             {}
           palette_link_2:
             {}
           palette_link_3:
-            limb_n_15_base_limb_link:
-              limb_n_15_limb_link1:
-                limb_n_15_limb_link2:
-                  limb_n_15_limb_link3:
-                    limb_n_15_limb_end_effector:
-                      {}
+            {}
           palette_link_4:
             limb_n_14_base_limb_link:
               limb_n_14_limb_link1:
@@ -447,10 +398,10 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.3850001096725464
+      Pitch: 0.16979651153087616
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 5.6649980545043945
+      Yaw: 4.98499870300293
     Saved:
       - Class: rviz_default_plugins/Orbit
         Distance: 3.4798741340637207

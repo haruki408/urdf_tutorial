@@ -1,0 +1,19 @@
+sequence:
+  - time: 0.0
+    limbs:
+      limb_n_12: [0.0, 0.0, 0.0, 0.0]
+      limb_n_13: [0.0, 0.0, 0.0, 0.0]
+    wheel_attach: false
+    gripper_attach: false
+
+  - time: 5.0
+    limbs:
+      limb_n_12: [0.0, 1.57, -1.57, 0.0]
+    wheel_attach: true     # ここで wheel を付ける
+    gripper_attach: false
+
+  - time: 10.0
+    limbs:
+      limb_n_13: [0.2, 0.2, -0.2, 0.0]
+    wheel_attach: true
+    gripper_attach: true   # ここで gripper を付ける（model_switcher 側が対応している前提）

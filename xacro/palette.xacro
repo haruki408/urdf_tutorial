@@ -4,10 +4,12 @@
    <xacro:include filename="$(find urdf_tutorial)/xacro/limb.xacro" />
    <xacro:include filename="$(find urdf_tutorial)/xacro/wheel_d250_with_connector.xacro" />
    <xacro:include filename="$(find urdf_tutorial)/xacro/palette_body.xacro" />
+   <xacro:include filename="$(find urdf_tutorial)/xacro/gripper.xacro" />
 
    <!-- 追加: ホイール有無の引数（デフォルト: あり） -->
    <!-- <xacro:arg name="use_wheel" default="true"/> -->
-   <xacro:arg name="attach_wheel" default="true"/>
+   <xacro:arg name="attach_wheel" default="false"/>
+   <xacro:arg name="attach_gripper" default="false"/>
   
    <link name="palette_link">
 
@@ -26,6 +28,8 @@
     <link name="palette_link_11"/>
     <link name="palette_link_12"/>
     <link name="palette_link_13"/>
+    <link name="palette_link_14"/>
+    <link name="palette_link_15"/>
 
     <joint name="palette_joint_1" type="fixed">
         <parent link="palette_link"/>
@@ -48,13 +52,13 @@
     <joint name="palette_joint_4" type="fixed">
         <parent link="palette_link"/>
         <child link="palette_link_4"/>
-        <origin xyz="0 -0.28 0" rpy="0 0 0"/>
+        <origin xyz="0.20 -0.78 0" rpy="0 0 0"/>
     </joint>
 
     <joint name="palette_joint_5" type="fixed">
         <parent link="palette_link"/>
         <child link="palette_link_5"/>
-        <origin xyz="0.28 -0.28 0" rpy="0 0 0"/>
+        <origin xyz="0.48 -0.78 0" rpy="0 0 0"/>
     </joint>
 
     <joint name="palette_joint_6" type="fixed">
@@ -105,9 +109,39 @@
         <origin xyz="1.12 -1.36 0" rpy="0 0 0"/>
     </joint>
 
-    <xacro:limb name="limb_n_12" base_frame="palette_link_7" p="${0*pi/180}" y="${0*pi/180}" r="${0*pi/180}" />
-    <xacro:limb name="limb_n_13" base_frame="palette_link_5" p="${0*pi/180}" y="${0*pi/180}" r="${0*pi/180}" />
-    <xacro:limb name="limb_n_14" base_frame="palette_link_4" p="${0*pi/180}" y="${0*pi/180}" r="${0*pi/180}" />
+    <joint name="palette_joint_14" type="fixed">
+        <parent link="palette_link"/>
+        <child link="palette_link_14"/>
+        <origin xyz="1.03 -0.50 0.0" rpy="0 0 0"/>
+    </joint>
+
+    <joint name="palette_joint_15" type="fixed">
+        <parent link="palette_link"/>
+        <child link="palette_link_15"/>
+        <origin xyz="1.3 -0.50 0.0" rpy="0 0 0"/>
+    </joint>
+
+    <xacro:limb name="limb_n_12" base_frame="palette_link_5" p="${0*pi/180}" y="${0*pi/180}" r="${0*pi/180}" />
+    <xacro:limb name="limb_n_13" base_frame="palette_link_14" p="${0*pi/180}" y="${0*pi/180}" r="${0*pi/180}" />
+    <xacro:limb name="limb_n_14" base_frame="palette_link_15" p="${0*pi/180}" y="${0*pi/180}" r="${0*pi/180}" />
+
+    <xacro:if value="$(arg attach_gripper)">
+        <xacro:gripper name="gripper_n_1"
+                            base_frame="limb_n_12_limb_end_effector"
+                            x="0.0" y_pos="0.0" z="0.0"
+                            r="${-90*pi/180}" p="${0*pi/180}" y="${90*pi/180}"/>
+                            
+    </xacro:if>
+
+    <xacro:unless value="$(arg attach_gripper)">
+        <xacro:gripper name="gripper_n_1"
+                            base_frame="palette_link_4"
+                            x="0.0" y_pos="0.0" z="0.0"
+                            r="${90*pi/180}" p="${0*pi/180}" y="${90*pi/180}"/> 
+                            
+    </xacro:unless>
+
+    <!-- <xacro:gripper name="gripper_n_1" base_frame="palette_link_4" x="0.0" y_pos="0.0" z="0.0" p="${0*pi/180}" y="${90*pi/180}" r="${90*pi/180}" /> -->
     <!-- <xacro:limb name="limb_n_15" base_frame="palette_link_3" p="${0*pi/180}" y="${0*pi/180}" r="${0*pi/180}" /> -->
     <!-- <xacro:wheel_d250 name="wheel_n_1" base_frame="palette_link_10" p="${0*pi/180}" y="${90*pi/180}" r="${90*pi/180}" /> -->
     <xacro:palette_body name="body_n_2" base_frame="palette_link_12" p="${0*pi/180}" y="${90*pi/180}" r="${0*pi/180}" />
